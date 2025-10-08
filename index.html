@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Task tracker</title>
-</head>
-<body>
-    
-    <div id="header">Task tracker</div>
-    <div id="container">
-        <div class = "dashboard" id="dashboard_title">Dashboard</div>
-        <div id="tasklist">
-            <ul id="tasklist-item">
-                <li>
-                    <p>Task 1</p><button type="submit">Mark as done</button>
-                </li>
-                <li><button type="submit">Mark as done</button></li>
-                <li><button type="submit">Mark as done</button></li>
-                <li><button type="submit">Mark as done</button></li>
-                <li><button type="submit">Mark as done</button></li>
-            </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Task Tracker</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <h1>To Do List</h1>
+      </div>
+
+      <div class="task-input">
+        <input
+          type="text"
+          class="input-item"
+          name="input_box"
+          id="input-box"
+          placeholder="Add task"
+        />
+
+        <!--Button to add the to the list-->
+        <button id="input-button" onclick="addTask()">Add</button>
+      </div>
+
+      <!--Task list-->
+      <h2>Task List</h2>
+      <ul id="list-container"></ul>
+      <hr/>
+      <!--Task list coutner-->
+      <div class="counter-container">
+        <div class="task-counters">
+            Complete: <span id="complete-counter">0</span> |
+            Uncomplete: <span id="uncomplete-counter">0</span>
         </div>
+      </div>
     </div>
-    
-</body>
+
+     <!--Connect to javaScript file-->
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>

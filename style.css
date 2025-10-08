@@ -1,34 +1,213 @@
-#header{
-    margin: auto;
-    padding: 10px;
-    text-align: center;
-    background-color: blue;
-    color: aliceblue;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#dashboard_title{
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: #1f2937;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.header h1 {
+    color: #818cf8;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-item {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #374151;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+    background: #111827;
+    color: #e5e7eb;
+}
+
+.input-item:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+}
+
+#input-button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#input-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.5);
+}
+
+#input-button:active {
+    transform: translateY(0);
+}
+
+h2 {
+    color: #e5e7eb;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#list-container {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#list-container li {
+    background: #374151;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    gap: 10px;
+    color: #e5e7eb;
+}
+
+#list-container li:hover {
+    background: #4b5563;
+    transform: translateX(5px);
+}
+
+#list-container li label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    cursor: pointer;
+}
+
+#list-container li input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #818cf8;
+}
+
+#list-container li span {
+    flex: 1;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    white-space: nowrap;
+}
+
+.edit-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #da190b;
+    transform: scale(1.05);
+}
+
+.complete {
+    background: #1f2937 !important;
+    border: 2px solid #4b5563 !important;
+    opacity: 0.6;
+}
+
+.complete label span {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #374151;
+    margin: 20px 0;
+}
+
+.counter-container {
     margin-top: 20px;
-    padding: 10px;
-    border: 1px;
-    background-color: blueviolet;
+}
+
+.task-counters {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-#tasklist{
-    background-color: aquamarine;
-    margin: auto;
-    padding-bottom: 50px;
-    padding-top: 50px;
-    padding-right: 20px;
+.task-counters span {
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
-#tasklist-item{
-    padding: auto;
-}
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
 
-.button{
-    margin: 10px;
-    padding: 10px;
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .task-input {
+        flex-direction: column;
+    }
+
+    #input-button {
+        width: 100%;
+    }
 }
